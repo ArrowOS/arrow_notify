@@ -25,7 +25,11 @@ DISPLAY_MODE="markdown"
 DISPLAY_SILENT="false"
 
 # Configuration file
-FILE_CONF="./telegram-notify.conf"
+if [ $test_notify -eq 0 ]; then
+  FILE_CONF="./telegram-notify-test.conf"
+else
+  FILE_CONF="./telegram-notify.conf"
+fi
 
 # -------------------------------------------------------
 #   Check tools availability
