@@ -23,6 +23,7 @@ DISPLAY_PICT=""
 DISPLAY_ICON=""
 DISPLAY_MODE="markdown"
 DISPLAY_SILENT="false"
+DISPLAY_LINK_PREVIEW="false"
 
 # Configuration file
 if [ $test_notify -eq 0 ]; then
@@ -178,7 +179,7 @@ then
 elif [ "${NOTIFY_TEXT}" != "" ]
 then
   # display text message
-  CURL_RESULT=$(curl "${ARR_OPTIONS[@]}" --data chat_id="${USER_ID}" --data "disable_notification=${DISPLAY_SILENT}" --data "parse_mode=${DISPLAY_MODE}" --data "text=${NOTIFY_TEXT}" "https://api.telegram.org/bot${API_KEY}/sendMessage")
+  CURL_RESULT=$(curl "${ARR_OPTIONS[@]}" --data chat_id="${USER_ID}" --data "disable_notification=${DISPLAY_SILENT}" --data "parse_mode=${DISPLAY_MODE}" --data "text=${NOTIFY_TEXT}" --data "disable_web_page_preview=${DISPLAY_LINK_PREVIEW}" "https://api.telegram.org/bot${API_KEY}/sendMessage")
 
 #  else, nothing, error
 else
