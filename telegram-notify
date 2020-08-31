@@ -23,7 +23,7 @@ DISPLAY_PICT=""
 DISPLAY_ICON=""
 DISPLAY_MODE="markdown"
 DISPLAY_SILENT="false"
-DISPLAY_LINK_PREVIEW="false"
+DISPLAY_LINK_PREVIEW="True"
 
 # Configuration file
 if [ $test_notify -eq 0 ]; then
